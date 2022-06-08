@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>W3.CSS Template</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link href="style.css" rel="stylesheet" type="text/css" />
+  
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+  integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ==" crossorigin=""/>
+
+<script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" 
+integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+</style>
+</head>
+<body class="w3-light-grey">
+
+<!-- w3-content defines a container for fixed size centered content, 
+and is wrapped around the whole page content, except for the footer in this example -->
+<div class="w3-content" style="max-width:1400px">
+
+<!-- Header -->
+<header class="w3-container w3-center w3-padding-32"> 
+  <h1><b>Localiza VV</b></h1>
+  <p>Explore <span class="w3-tag">VilaVelha</span></p>
+</header>
+
+<!-- Grid -->
+<div class="w3-row">
+
+<!-- Blog entries -->
+<div class="w3-col l8 s12">
+  <!-- Blog entry -->
+  <div class="w3-card-4 w3-margin w3-white">
+    <img src="imagens/penha.jpg" alt="Nature" style="width:100%">
+    <div class="w3-container">
+      <h3><b>Convento da Penha</b></h3>
+      <h5>História e local, <span class="w3-opacity">5 de Junho, 2022</span></h5>
+      <p>O santuário foi construído depois da imagem da Nossa Senhora das Alegrias desaparecer três vezes da gruta do Frei Pedro Palácios e aparecer no alto do morro. O Convento da Penha foi fundado por Frei Pedro Palácios, que chegou ao Espírito Santo em 1558, com a imagem da Nossa Senhora das Alegrias.</p>
+      <p>LOCAL: R. Vasco Coutinho - Prainha, Vila Velha - ES, 29100-231</p>
+    </div>
+
+    <div class="w3-container">
+      <p></p>
+      <div class="w3-row">
+        <div class="w3-col m8 s12">
+        </div>
+        <div class="w3-col m4 w3-hide-small">
+          <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-tag">0</span></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+
+  <!-- Blog entry -->
+  <div class="w3-card-4 w3-margin w3-white">
+  <img src="imagens/museu.jpg" alt="Norway" style="width:100%">
+    <div class="w3-container">
+      <h3><b>Museu da Vale</b></h3>
+      <h5>história e local, <span class="w3-opacity">1 de Junho</span></h5>
+    </div>
+
+    <div class="w3-container">
+      <p>O Museu Vale, inaugurado em 15 de outubro de 1998, é uma iniciativa da Fundação Vale, instituição que desenvolve ações, projetos e programas sociais nas regiões onde a Vale atua, a fim de contribuir para o desenvolvimento territorial e fortalecimento das pessoas e comunidades, respeitando identidades culturais locais.</p>
+      <p>LOCAL: Pátio da Antiga - Rua Vila Isabel, Estação Pedro Nolasco, s/n - Argolas, Vila Velha - ES, 29114-670</p>
+      <div class="w3-row">
+        <div class="w3-col m8 s12">
+        </div>
+        <div class="w3-col m4 w3-hide-small">
+          <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-badge">2</span></span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+<!-- END BLOG ENTRIES -->
+</div>
+
+<!-- Introduction menu -->
+<div class="w3-col l4">
+  <!-- About Card -->
+  <div class="w3-card w3-margin w3-margin-top">
+  <img src="imagens/bandeira.png" style="width:100%">
+    <div class="w3-container w3-white">
+      <h4><b>Vila Velha</b></h4>
+      <p>A cidade começou em um domingo, no dia 23 de maio de 1.535, quando a caravela Glória, que trazia o português Vasco Fernandes Coutinho, aportou na Prainha. Inicialmente, a capitania foi batizada com o nome de Espírito Santo, porque a chegada do donatário ocorreu em um domingo em que os católicos festejavam Pentecostes.</p>
+    </div>
+  </div><hr>
+  
+  <!-- Posts -->
+  <div class="w3-card w3-margin">
+    <div class="w3-container w3-padding">
+      <h2>Explore Vila Velha</h2>
+    </div>
+     <div id="map"></div>
+  
+  <h3 id="geo"> Descubra sua localização !!!</h3>
+  <button onclick="localizar()">Localize-se</button>
+  
+  <script src="script.js"></script>
+  </div>
+  <hr> 
+ 
+  <!-- Labels / tags -->
+  <div class="w3-card w3-margin">
+    <div class="w3-container w3-padding">
+      <h4>Tags</h4>
+    </div>
+    <div class="w3-container w3-white">
+    <p><span class="w3-tag w3-black w3-margin-bottom">Vila Velha</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Viagens</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Espírito Santo</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">StartNav</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Brasil</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Vale</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Lugares</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Museu</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Família</span>
+      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">História</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Localização</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Shopping</span>
+    </p>
+    </div>
+  </div>
+  
+<!-- END Introduction Menu -->
+</div>
+
+<!-- END GRID -->
+</div><br>
+
+<!-- END w3-content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+</footer>
+
+</body>
+</html>
